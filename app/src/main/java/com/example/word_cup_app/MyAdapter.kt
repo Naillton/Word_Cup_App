@@ -7,8 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 
 // criando classe myAdapter que é do tipo BaseAdapter, onde usamos para adaptar nossa classe a listView
@@ -54,26 +52,12 @@ class MyAdapter(private var activity: Activity, private var items: ArrayList<Cou
 
         view?.setOnClickListener(){
             Toast.makeText(activity,
-                "You Choose: ${countries.name}",
+                "You Choose: ${countries.name} "+
+                        "Cups: ${countries.champion}",
                 Toast.LENGTH_SHORT
             ).show()
         }
 
         return view as View
-    }
-
-    // criando suporte de vizualiacao onde passaremos tudo que queremos ser visualizado na lista
-    // depois iniciamos pasando o id para cada posicao
-    private class ViewHolder(row: View?) {
-        var name: TextView? = null
-        var champion: TextView? = null
-        var flagImg: ImageView? = null
-
-        init {
-            this.name = row?.findViewById(R.id.tView)
-            this.champion = row?.findViewById(R.id.tView2)
-            this.flagImg = row?.findViewById(R.id.flagImage)
-        }
-
     }
 }

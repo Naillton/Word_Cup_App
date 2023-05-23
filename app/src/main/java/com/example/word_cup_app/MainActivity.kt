@@ -2,7 +2,6 @@ package com.example.word_cup_app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Adapter
 import android.widget.ListView
 
 class MainActivity : AppCompatActivity() {
